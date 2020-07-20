@@ -10,15 +10,29 @@ function Header(props) {
 
     props.cart.forEach((element) => {
         cartHTML.push(
-            <li>
-                {element.name}
-            </li>
+            <div class='content'>
+                <button id='remove'
+                    onClick={(e) => {
+                        props.dispatch({
+                            type: 'REMOVE_FROM_CART',
+                            payload: item
+                        })
+                    }}
+                > Remove
+           </button>
+                <li>
+                    {element.name}
+                </li>
+            </div>
         )
-
     })
 
     return (
         <>
+
+            <header>
+                <h1>~ ❀ My Beauty Store ❀ ~</h1>
+            </header>
             <button id='cart' onClick={(e) => {
                 cartMenu = !cartMenu
                 // console.log(cartMenu)
@@ -28,14 +42,10 @@ function Header(props) {
                     setItem([]);
                 }
             }}
-            >Cart {props.cartCount}</button>
+            >Your Cart {props.cartCount}</button>
             {/* {cartMenu ? cartHTML : null} */}
             {/* {cartHTML} */}
-            {item}
-
-            <header>
-                <h1>~ ❀ My Beauty Store ❀ ~</h1>
-            </header>
+            {cartHTML}
 
         </>
     );

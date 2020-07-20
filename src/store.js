@@ -28,7 +28,7 @@ const reducer = (state = initState, action) => {
             newState.currentCategory = action.payload;
             break;
         case 'ADD_TO_CART':
-            console.log(action.payload)
+            // console.log(action.payload)
             newState.cart.push(action.payload);
             newState.cartCount++;
             break;

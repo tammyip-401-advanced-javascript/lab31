@@ -15,7 +15,6 @@ function SingleProduct(props) {
                 <br />
                 <button onClick={() => {
                     let display = addtoCart(props.product)
-                    // store(display)
                     props.dispatch(display)
                 }}
 

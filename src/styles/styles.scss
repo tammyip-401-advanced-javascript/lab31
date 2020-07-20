@@ -20,7 +20,7 @@ $spacing: 20px;
 header{
   font-size: 0.8em;
   text-align: center;
-  padding: 4em;
+  padding: 3em;
   font-style: italic;
   color:rgb(172, 96, 172);
   text-shadow: 2px 2px 5px rgb(199, 145, 145);
@@ -64,6 +64,12 @@ button{
   margin: 1em;
 }
 
+// .content{
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
 #cart{
   color: rgb(58, 2, 58);
   margin: 2.5em;
@@ -74,7 +80,12 @@ button{
   float: right;
 }
 
+#remove{
+  float: right;
+}
+
 li{
+  font-size: 0.75em;
   float: right;
   position: relative;
   bottom: 3px;
