@@ -64,6 +64,23 @@ button{
   margin: 1em;
 }
 
+#cart{
+  color: rgb(58, 2, 58);
+  margin: 2.5em;
+  font-size: 1em;
+  position: relative; 
+  top: 1px;
+  // right: 20%;
+  float: right;
+}
+
+li{
+  float: right;
+  position: relative;
+  bottom: 3px;
+  
+}
+
 
 // .header {
 //   text-align: center;

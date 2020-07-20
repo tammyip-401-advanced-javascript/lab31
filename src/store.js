@@ -17,6 +17,7 @@ const initState = {
     ],
     currentCategory: '',
     cart: [],
+    cartCount: 0,
 };
 
 const reducer = (state = initState, action) => {
@@ -27,7 +28,18 @@ const reducer = (state = initState, action) => {
             newState.currentCategory = action.payload;
             break;
         case 'ADD_TO_CART':
+            console.log(action.payload)
             newState.cart.push(action.payload);
+            newState.cartCount++;
+            break;
+        case 'REMOVE_FROM_CART':
+            newState.cartCount--;
+            newState.cart = newState.cart.filter((val) => {
+                return val.name !== action.payload;
+            });
+            break;
+        case 'ADD_PRODUCT':
+            newState.products.push(action.payload);
             break;
         case 'RESET_STORE':
             newState = { ...initState };
@@ -35,9 +47,17 @@ const reducer = (state = initState, action) => {
         default:
             break;
     }
-
     return newState;
+};
+
+const addtoCart = (product) => {
+    return { type: 'ADD_TO_CART', payload: product };
+};
+
+const removeFromCart = (product) => {
+    return { type: 'REMOVE_FROM_CART', payload: product };
 };
 
 export default createStore(reducer);
 export { reducer };
+export { addtoCart, removeFromCart };

@@ -35,6 +35,7 @@ function Products(props) {
                 view={(e) => {
                     viewDetails(i);
                 }}
+                product={product}
             />,
         );
     }
