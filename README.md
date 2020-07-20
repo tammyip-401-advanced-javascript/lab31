@@ -1,12 +1,12 @@
-# lab29
+# lab31
 
-Project Name: Application State with Redux
+Project Name: Redux - Combined Reducers
 
 Author: Tammy Ip
 
 Links and Resources (see below)
-submission PR: `https://github.com/tammyip-401-advanced-javascript/lab29/pull/1`
-Netlify: `https://401n16lab29.netlify.app/`
+submission PR: `https://github.com/tammyip-401-advanced-javascript/lab31/pull/1`
+Netlify: `https://401n16lab31.netlify.app/`
 
 
 Documentation
@@ -28,5 +28,5 @@ Setup
 
 
 UML
-https://docs.google.com/spreadsheets/d/1sw0adJaHaBHW2L59uq4rBPsARrtVH1QerUsuJKG0zDU/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1KmUI0TJXwwJX2I5XoBvJnPBklgNFLJ5Zs3qjST5AZnY/edit?usp=sharing
 
