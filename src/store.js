@@ -2,9 +2,9 @@ import { createStore } from 'redux';
 
 const initState = {
     categories: [
-        { name: 'Electronics', displayName: 'Electronics' },
-        { name: 'Clothing', displayName: 'Clothing' },
-        { name: 'Supplements', displayName: 'Supplements' },
+        { name: 'Electronics', display_name: 'Electronics' },
+        { name: 'Clothing', display_name: 'Clothing' },
+        { name: 'Supplements', display_name: 'Supplements' },
     ],
     products: [
         { name: 'Facial Steamer', category: 'Electronics', price: 199.0, inStock: 5 },
@@ -18,28 +18,35 @@ const initState = {
     currentCategory: '',
     cart: [],
     cartCount: 0,
+    drawer: false,
 };
 
 const reducer = (state = initState, action) => {
+    const { payload, type } = action
+
     let newState = { ...state };
 
-    switch (action.type) {
+    switch (type) {
         case 'SET_CURRENT_CATEGORY':
-            newState.currentCategory = action.payload;
+            newState.currentCategory = payload;
             break;
         case 'ADD_TO_CART':
-            // console.log(action.payload)
-            newState.cart.push(action.payload);
+            // console.log(payload)
+            newState.cart.push(payload);
             newState.cartCount++;
             break;
         case 'REMOVE_FROM_CART':
             newState.cartCount--;
+            //show the cart without the content that got removed
             newState.cart = newState.cart.filter((val) => {
-                return val.name !== action.payload;
+                return val.name !== payload.name;
             });
             break;
+        case 'TOGGLE_DRAWER':
+            newState.drawer = payload;
+            break;
         case 'ADD_PRODUCT':
-            newState.products.push(action.payload);
+            newState.products.push(payload);
             break;
         case 'RESET_STORE':
             newState = { ...initState };

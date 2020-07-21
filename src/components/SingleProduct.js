@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 
 function SingleProduct(props) {
+
     return (
         <div class='product'>
             <img src={props.img} alt={props.alt} />
@@ -22,6 +23,7 @@ function SingleProduct(props) {
                 <button onClick={props.view}>View Details</button>
             </div>
         </div>
+        //call the reducer with a specified action
     );
 }
 
